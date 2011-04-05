@@ -1,8 +1,6 @@
-#!/bin/bash
 # vim: tabstop=4 shiftwidth=4 softtabstop=4
 
-# Copyright 2010 United States Government as represented by the
-# Administrator of the National Aeronautics and Space Administration.
+# Copyright 2011 Justin Santa Barbara
 # All Rights Reserved.
 #
 #    Licensed under the Apache License, Version 2.0 (the "License"); you may
@@ -15,21 +13,10 @@
 #    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
-#    under the License.
+#    under the License.import datetime
 
-# This gets zipped and run on the cloudpipe-managed OpenVPN server
-NAME=$1
-SUBJ=$2
+"""Contrib contains extensions that are shipped with nova.
 
-mkdir -p projects/$NAME
-cd projects/$NAME
+It can't be called 'extensions' because that causes namespacing problems.
 
-# generate a server priv key
-openssl genrsa -out server.key 2048
-
-# generate a server CSR
-openssl req -new -key server.key -out server.csr -batch -subj "$SUBJ"
-
-if [ "`id -u`" != "`grep nova /etc/passwd | cut -d':' -f3`" ]; then
-    sudo chown -R nova:nogroup .
-fi
+"""
