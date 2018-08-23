@@ -16,9 +16,9 @@ from oslo_versionedobjects import base
 from oslo_versionedobjects import fields
 import sqlalchemy as sa
 
-from nova.api.openstack.placement import db_api
-from nova.api.openstack.placement import exception
-from nova.db.sqlalchemy import api_models as models
+from placement.api import db_api
+from placement.api import exception
+from placement.db.sqlalchemy import api_models as models
 
 CONF = cfg.CONF
 USER_TBL = models.User.__table__

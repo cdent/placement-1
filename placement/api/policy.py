@@ -16,8 +16,8 @@ from oslo_log import log as logging
 from oslo_policy import policy
 from oslo_utils import excutils
 
-from nova.api.openstack.placement import exception
-from nova.api.openstack.placement import policies
+from placement.api import exception
+from placement.api import policies
 
 
 CONF = cfg.CONF

@@ -13,7 +13,7 @@
 
 from oslo_policy import policy
 
-from nova.api.openstack.placement.policies import base
+from placement.api.policies import base
 
 
 PROVIDER_USAGES = 'placement:resource_providers:usages'

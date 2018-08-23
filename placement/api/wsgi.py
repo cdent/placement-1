@@ -24,9 +24,9 @@ from oslo_policy import opts as policy_opts
 from oslo_utils import importutils
 import pbr.version
 
-from nova.api.openstack.placement import db_api
-from nova.api.openstack.placement import deploy
-from nova import conf
+from placement.api import db_api
+from placement.api import deploy
+#from nova import conf
 
 
 profiler = importutils.try_import('osprofiler.opts')

@@ -15,14 +15,14 @@ from microversion_parse import middleware as mp_middleware
 import oslo_middleware
 from oslo_middleware import cors
 
-from nova.api.openstack.placement import auth
-from nova.api.openstack.placement import db_api
-from nova.api.openstack.placement import fault_wrap
-from nova.api.openstack.placement import handler
-from nova.api.openstack.placement import microversion
-from nova.api.openstack.placement.objects import resource_provider
-from nova.api.openstack.placement import requestlog
-from nova.api.openstack.placement import util
+from placement.api import auth
+from placement.api import db_api
+from placement.api import fault_wrap
+from placement.api import handler
+from placement.api import microversion
+from placement.api.objects import resource_provider
+from placement.api import requestlog
+from placement.api import util
 
 
 # TODO(cdent): NAME points to the config project being used, so for

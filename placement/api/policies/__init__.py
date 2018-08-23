@@ -12,15 +12,15 @@
 
 import itertools
 
-from nova.api.openstack.placement.policies import aggregate
-from nova.api.openstack.placement.policies import allocation
-from nova.api.openstack.placement.policies import allocation_candidate
-from nova.api.openstack.placement.policies import base
-from nova.api.openstack.placement.policies import inventory
-from nova.api.openstack.placement.policies import resource_class
-from nova.api.openstack.placement.policies import resource_provider
-from nova.api.openstack.placement.policies import trait
-from nova.api.openstack.placement.policies import usage
+from placement.api.policies import aggregate
+from placement.api.policies import allocation
+from placement.api.policies import allocation_candidate
+from placement.api.policies import base
+from placement.api.policies import inventory
+from placement.api.policies import resource_class
+from placement.api.policies import resource_provider
+from placement.api.policies import trait
+from placement.api.policies import usage
 
 
 def list_rules():

@@ -13,7 +13,7 @@
 
 import copy
 
-from nova.db import constants as db_const
+from placement.db import constants as db_const
 
 
 RESOURCE_CLASS_IDENTIFIER = "^[A-Z0-9_]+$"

@@ -15,11 +15,11 @@ from oslo_versionedobjects import base
 from oslo_versionedobjects import fields
 import sqlalchemy as sa
 
-from nova.api.openstack.placement import db_api
-from nova.api.openstack.placement import exception
-from nova.api.openstack.placement.objects import project as project_obj
-from nova.api.openstack.placement.objects import user as user_obj
-from nova.db.sqlalchemy import api_models as models
+from placement.api import db_api
+from placement.api import exception
+from placement.api.objects import project as project_obj
+from placement.api.objects import user as user_obj
+from placement.db.sqlalchemy import api_models as models
 
 CONSUMER_TBL = models.Consumer.__table__
 _ALLOC_TBL = models.Allocation.__table__

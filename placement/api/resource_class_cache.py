@@ -13,10 +13,10 @@
 from oslo_concurrency import lockutils
 import sqlalchemy as sa
 
-from nova.api.openstack.placement import db_api
-from nova.api.openstack.placement import exception
-from nova.db.sqlalchemy import api_models as models
-from nova import rc_fields as fields
+from placement.api import db_api
+from placement.api import exception
+from placement.db.sqlalchemy import api_models as models
+from placement import rc_fields as fields
 
 _RC_TBL = models.ResourceClass.__table__
 _LOCKNAME = 'rc_cache'

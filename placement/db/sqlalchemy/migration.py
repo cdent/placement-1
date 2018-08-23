@@ -24,10 +24,8 @@ from oslo_log import log as logging
 import sqlalchemy
 from sqlalchemy.sql import null
 
-from nova.api.openstack.placement import db_api as placement_db
-from nova.db.sqlalchemy import api as db_session
-from nova import exception
-from nova.i18n import _
+from placement.api import db_api as placement_db
+from placement.i18n import _
 
 INIT_VERSION = {}
 INIT_VERSION['main'] = 215
@@ -39,10 +37,6 @@ LOG = logging.getLogger(__name__)
 
 
 def get_engine(database='main', context=None):
-    if database == 'main':
-        return db_session.get_engine(context=context)
-    if database == 'api':
-        return db_session.get_api_engine()
     if database == 'placement':
         return placement_db.get_placement_engine()
 
@@ -52,7 +46,7 @@ def db_sync(version=None, database='main', context=None):
         try:
             version = int(version)
         except ValueError:
-            raise exception.NovaException(_("version should be an integer"))
+            raise Exception(_("version should be an integer"))
 
     current_version = db_version(database, context=context)
     repository = _find_migrate_repo(database)
@@ -84,7 +78,7 @@ def db_version(database='main', context=None):
             LOG.exception(exc)
             # Some pre-Essex DB's may not be version controlled.
             # Require them to upgrade using Essex first.
-            raise exception.NovaException(
+            raise Exception(
                 _("Upgrade DB using Essex release first."))
 
 

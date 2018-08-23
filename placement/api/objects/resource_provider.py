@@ -37,15 +37,15 @@ from sqlalchemy import func
 from sqlalchemy import sql
 from sqlalchemy.sql import null
 
-from nova.api.openstack.placement import db_api
-from nova.api.openstack.placement import exception
-from nova.api.openstack.placement.objects import consumer as consumer_obj
-from nova.api.openstack.placement.objects import project as project_obj
-from nova.api.openstack.placement.objects import user as user_obj
-from nova.api.openstack.placement import resource_class_cache as rc_cache
-from nova.db.sqlalchemy import api_models as models
-from nova.i18n import _
-from nova import rc_fields
+from placement.api import db_api
+from placement.api import exception
+from placement.api.objects import consumer as consumer_obj
+from placement.api.objects import project as project_obj
+from placement.api.objects import user as user_obj
+from placement.api import resource_class_cache as rc_cache
+from placement.db.sqlalchemy import api_models as models
+from placement.i18n import _
+from placement import rc_fields
 
 _TRAIT_TBL = models.Trait.__table__
 _ALLOC_TBL = models.Allocation.__table__

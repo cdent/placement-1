@@ -13,8 +13,8 @@
 from oslo_context import context
 from oslo_db.sqlalchemy import enginefacade
 
-from nova.api.openstack.placement import exception
-from nova.api.openstack.placement import policy
+from placement.api import exception
+from placement.api import policy
 
 
 @enginefacade.transaction_context_provider

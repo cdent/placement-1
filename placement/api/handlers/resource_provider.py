@@ -18,15 +18,15 @@ from oslo_utils import timeutils
 from oslo_utils import uuidutils
 import webob
 
-from nova.api.openstack.placement import errors
-from nova.api.openstack.placement import exception
-from nova.api.openstack.placement import microversion
-from nova.api.openstack.placement.objects import resource_provider as rp_obj
-from nova.api.openstack.placement.policies import resource_provider as policies
-from nova.api.openstack.placement.schemas import resource_provider as rp_schema
-from nova.api.openstack.placement import util
-from nova.api.openstack.placement import wsgi_wrapper
-from nova.i18n import _
+from placement.api import errors
+from placement.api import exception
+from placement.api import microversion
+from placement.api.objects import resource_provider as rp_obj
+from placement.api.policies import resource_provider as policies
+from placement.api.schemas import resource_provider as rp_schema
+from placement.api import util
+from placement.api import wsgi_wrapper
+from placement.i18n import _
 
 
 def _serialize_links(environ, resource_provider):

@@ -60,15 +60,8 @@ from sqlalchemy.sql import func
 from sqlalchemy.sql import null
 from sqlalchemy.sql import true
 
-from nova import block_device
-from nova.compute import task_states
-from nova.compute import vm_states
-import nova.conf
-import nova.context
-from nova.db.sqlalchemy import models
-from nova import exception
-from nova.i18n import _
-from nova import safe_utils
+from placement.db.sqlalchemy import models
+from placement.i18n import _
 
 profiler_sqlalchemy = importutils.try_import('osprofiler.sqlalchemy')
 
