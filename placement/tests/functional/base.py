@@ -19,8 +19,8 @@ from placement.api import context
 from placement.api import deploy
 from placement.api.objects import resource_provider
 from placement.tests import fixtures
-from placement.tests import policy_fixture
 from placement.tests.functional.fixtures import capture
+from placement.tests import policy_fixture
 
 
 CONF = cfg.CONF

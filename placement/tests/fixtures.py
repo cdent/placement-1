@@ -17,14 +17,6 @@
 """Fixtures for Nova tests."""
 from __future__ import absolute_import
 
-# FIXME(cdent) some of these are not needed
-import collections
-from contextlib import contextmanager
-import copy
-import logging as std_logging
-import os
-import warnings
-
 import fixtures
 from oslo_config import cfg
 

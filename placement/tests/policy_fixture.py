@@ -14,18 +14,14 @@
 
 from __future__ import absolute_import
 
-import os
-
 import fixtures
 from oslo_policy import policy as oslo_policy
-from oslo_serialization import jsonutils
 
 from placement.api import policy as placement_policy
 import placement.conf
 from placement.conf import paths
 
 CONF = placement.conf.CONF
-
 
 
 class PlacementPolicyFixture(fixtures.Fixture):

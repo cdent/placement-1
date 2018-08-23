@@ -29,9 +29,9 @@ from placement.api.objects import user as user_obj
 from placement.api import policies
 from placement import rc_fields as fields
 from placement.tests import fixtures
-from placement.tests import policy_fixture
 from placement.tests.functional.db import test_base as tb
 from placement.tests.functional.fixtures import capture
+from placement.tests import policy_fixture
 from placement.tests import uuidsentinel as uuids
 
 

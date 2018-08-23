@@ -20,7 +20,7 @@ from __future__ import absolute_import
 
 from oslo_config import cfg
 
-# FIXME(cdent): this needs to be more fully trimmed, what's been done now is 
+# FIXME(cdent): this needs to be more fully trimmed, what's been done now is
 # just to get tests to run
 
 from placement.conf import api

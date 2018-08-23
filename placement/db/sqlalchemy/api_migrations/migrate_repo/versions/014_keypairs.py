@@ -10,16 +10,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-from migrate import UniqueConstraint
-from sqlalchemy import Column
-from sqlalchemy import DateTime
-from sqlalchemy import Enum
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import Text
-
 
 def upgrade(migrate_engine):
     pass
