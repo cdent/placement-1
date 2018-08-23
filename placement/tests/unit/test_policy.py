@@ -10,38 +10,55 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import contextlib
 import os
+import shutil
+import tempfile
 
+from oslo_config import cfg
+from oslo_config import fixture as config_fixture
 from oslo_policy import policy as oslo_policy
 import testtools
 
-from nova.api.openstack.placement import context
-from nova.api.openstack.placement import exception
-from nova.api.openstack.placement import policy
-from nova.tests.unit import conf_fixture
-from nova.tests.unit import policy_fixture
-from nova import utils
+from placement.api import context
+from placement.api import exception
+from placement.api import policy
+from placement.tests import policy_fixture
+
+
+CONF = cfg.CONF
+
+
+# FIXME(cdent): this is copied from nova.utils
+@contextlib.contextmanager
+def tempdir(**kwargs):
+    conf = kwargs.pop('conf')
+    argdict = kwargs.copy()
+    if 'dir' not in argdict:
+        argdict['dir'] = conf.tempdir
+    tmpdir = tempfile.mkdtemp(**argdict)
+    try:
+        yield tmpdir
+    finally:
+        shutil.rmtree(tmpdir)
 
 
 class PlacementPolicyTestCase(testtools.TestCase):
     """Tests interactions with placement policy.
-
-    These tests do not rely on the base nova.test.TestCase to avoid
-    interference from the PlacementPolicyFixture which is not used in all
-    test cases.
     """
     def setUp(self):
         super(PlacementPolicyTestCase, self).setUp()
-        self.conf = self.useFixture(conf_fixture.ConfFixture()).conf
+        self.conf = self.useFixture(config_fixture.Config(CONF)).conf
         self.ctxt = context.RequestContext(user_id='fake', project_id='fake')
         self.target = {'user_id': 'fake', 'project_id': 'fake'}
+        CONF([], default_config_files=[])
 
     def test_modified_policy_reloads(self):
         """Creates a temporary placement-policy.yaml file and tests
         authorizations against a fake rule between updates to the physical
         policy file.
         """
-        with utils.tempdir() as tmpdir:
+        with tempdir(conf=self.conf) as tmpdir:
             tmpfilename = os.path.join(tmpdir, 'placement-policy.yaml')
 
             self.conf.set_default(

@@ -10,6 +10,8 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+# FIXME(cdent): This file is likely in the wrong place. It's not really a
+# fixture for placement to use itself, it is for other things using placement.
 
 import fixtures
 from oslo_config import cfg
@@ -17,6 +19,8 @@ from oslo_config import fixture as config_fixture
 from oslo_utils import uuidutils
 from wsgi_intercept import interceptor
 
+# FIXME(cdent): This was required at some point during test discovery fixes
+# but shouldn't be relevant now. Leaving for later investigation.
 #from placement.api import deploy
 
 

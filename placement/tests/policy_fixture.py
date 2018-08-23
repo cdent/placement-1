@@ -30,8 +30,6 @@ CONF = placement.conf.CONF
 
 class PlacementPolicyFixture(fixtures.Fixture):
     """Load the default placement policy for tests.
-
-    This fixture requires nova.tests.unit.conf_fixture.ConfFixture.
     """
     def setUp(self):
         super(PlacementPolicyFixture, self).setUp()

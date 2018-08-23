@@ -47,7 +47,7 @@ class APIFixture(fixture.GabbiFixture):
 
     def start_fixture(self):
         # Set up stderr and stdout captures by directly driving the
-        # existing nova fixtures that do that. This captures the
+        # existing fixtures that do that. This captures the
         # output that happens outside individual tests (for
         # example database migrations).
         self.standard_logging_fixture = capture.Logging()
@@ -81,6 +81,7 @@ class APIFixture(fixture.GabbiFixture):
         # NoSuchOptError.
         policy_opts.set_defaults(CONF)
 
+        # FIXME(cdent): Where is conf these days? Oh yeah...
         # Make sure default_config_files is an empty list, not None.
         # If None /etc/nova/nova.conf is read and confuses results.
         CONF([], default_config_files=[])

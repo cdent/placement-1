@@ -19,10 +19,10 @@ import routes
 import testtools
 import webob
 
-from nova.api.openstack.placement import handler
-from nova.api.openstack.placement.handlers import root
-from nova.api.openstack.placement import microversion
-from nova.tests import uuidsentinel
+from placement.api import handler
+from placement.api.handlers import root
+from placement.api import microversion
+from placement.tests import uuidsentinel
 
 
 # Used in tests below
@@ -125,7 +125,7 @@ class MapperTest(testtools.TestCase):
 
 class PlacementLoggingTest(testtools.TestCase):
 
-    @mock.patch("nova.api.openstack.placement.handler.LOG")
+    @mock.patch("placement.api.handler.LOG")
     def test_404_no_error_log(self, mocked_log):
         environ = _environ(path='/hello', method='GET')
         context_mock = mock.Mock()

@@ -16,9 +16,9 @@ import six
 import testtools
 import webob
 
-from nova.api.openstack.placement import exception
-from nova.api.openstack.placement.handlers import aggregate
-from nova.api.openstack.placement.objects import resource_provider
+from placement.api import exception
+from placement.api.handlers import aggregate
+from placement.api.objects import resource_provider
 
 
 class TestAggregateHandlerErrors(testtools.TestCase):
