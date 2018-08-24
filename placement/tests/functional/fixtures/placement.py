@@ -13,6 +13,8 @@
 # FIXME(cdent): This file is likely in the wrong place. It's not really a
 # fixture for placement to use itself, it is for other things using placement.
 
+from __future__ import absolute_import
+
 import fixtures
 from oslo_config import cfg
 from oslo_config import fixture as config_fixture
